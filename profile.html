@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+<!-- Boxicons CSS -->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<title>My Profile card</title>
+<link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+
+    <div class="container">
+        <div class="image-section">
+            <img src="./DP.png" alt="display picture">
+        </div>
+        <div class="text-content" id="textContent">
+            <span>Eunice Ogboye</span>
+            <span>Full Stack Developer</span>
+            <p>I have a deep passion and interest in Software Engineering. Reliable, and innovative solutions.</p>
+            <button class="btn" id="readMoreBtn">Read More</button>
+            <div class="socials">
+                <p><a href="https://github.com/euniceogboye"><i class='bx bxl-github'></i></a></p>
+                <p><a href="https://twitter.com/euniceogboye"><i class='bx bxl-twitter'></i></a></p>
+                <p><a href="https://www.linkedin.com/in/euniceogboye/"><i class='bx bxl-linkedin'></i></a></p>
+                <p><a href="https://www.instagram.com/euniceogboye/"><i class='bx bxl-instagram'></i></a></p>
+            </div>
+        </div>
+        <div class="info" id="info" style="display: none;">
+            <div class="bio">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum delectus perspiciatis pariatur laudantium voluptas, incidunt facere. Voluptatum aliquam, illo repellendus, amet architecto optio magnam deleniti dolorem voluptates reiciendis, ea ipsa.
+                <p>Ibadan, Nigeria.</p>
+                <i>ogboyeeunice@gmail.com</i>
+                <p id="UTC"></p>
+                <button class="btn" id="showLessBtn">Show Less</button> 
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const readMoreBtn = document.getElementById("readMoreBtn");
+            const showLessBtn = document.getElementById("showLessBtn");
+            const infoDiv = document.getElementById("info");
+            const textContent = document.getElementById("textContent");
+            const utcElement = document.getElementById("UTC");
+
+            // Show info div and hide text content when "Read More" is clicked
+            readMoreBtn.addEventListener("click", function () {
+                infoDiv.style.display = "block";
+                textContent.style.display = "none"; // Hide text content
+            });
+
+            // Show text content again when "Show Less" is clicked
+            showLessBtn.addEventListener("click", function () {
+                infoDiv.style.display = "none";
+                textContent.style.display = "block"; // Show text content
+            });
+
+            // Set the current date in UTC format
+            const currentDate = new Date().toUTCString();
+            utcElement.textContent = `Current Date: ${currentDate}`;
+        });
+    </script>
+  
+</body>
+</html>
