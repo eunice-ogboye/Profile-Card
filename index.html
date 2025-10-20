@@ -10,49 +10,53 @@
 </head>
 <body>
 
-    <div class="container">
+    <main class="container" data-testid="test-profile-card">
         <div class="image-section">
             <img src="./DP.png" data-testid="test-user-avatar" alt="display picture">
         </div>
         <div class="text-content" id="textContent">
-            <span data-testid="fullName">Eunice Ogboye</span><br>
+            <span  data-testid="test-user-name">Eunice Ogboye</span><br>
             <span data-testid="jobTitle">Full Stack Developer</span>
-            <p data-testid="shortBio">I am a results-driven software developer that is dedicated to creating efficient, scalable, and innovative solutions.</p>
+            <p data-testid="test-user-bio">I am a results-driven software developer that is dedicated to creating efficient, scalable, and innovative solutions.</p>
             <button class="btn" id="readMoreBtn">Read More</button>
             <div class="socials" data-testid="test-user-social-links">
-                <p><a href="https://github.com/eunice-ogboye" target="_blank"><i class='bx bxl-github'></i></a></p>
-                <p><a href="https://twitter.com/euniceogboye" target="_blank"><i class='bx bxl-twitter'></i></a></p>
-                <p><a href="https://www.linkedin.com/in/eunice-ogboye" target="_blank"><i class='bx bxl-linkedin'></i></a></p>
-                <p><a href="https://www.instagram.com/eunice_kemi/" target="_blank"><i class='bx bxl-instagram'></i></a></p>
+                <p><a href="https://github.com/eunice-ogboye" target="_blank" data-testid="test-user-social-github"><i class='bx bxl-github'></i></a></p>
+                <p><a href="https://twitter.com/euniceogboye" target="_blank" data-testid="test-user-social-twitter"><i class='bx bxl-twitter'></i></a></p>
+                <p><a href="https://www.linkedin.com/in/eunice-ogboye" target="_blank" data-testid="test-user-social-linkedin"><i class='bx bxl-linkedin'></i></a></p>
+                <p><a href="https://www.instagram.com/eunice_kemi/" target="_blank" data-testid="test-user-social-instagram"><i class='bx bxl-instagram'></i></a></p>
             </div>
+             <article>
+            <a class="btn" href="./about.html">About</a>
+            <a class="btn" href="./contact.html">Contact</a>
+        </article>
         </div>
+       
         <div class="info" id="info" style="display: none;">
             <div class="bio">
-                <span> I have developed a strong proficiency in JavaScript, serving as the backbone for my expertise in front-end development. I have successfully applied this knowledge in real-world projects, where I leveraged React.js to build interactive and user-friendly interfaces.</span>
-                <div class="additional-info">
+                <span>I have successfully applied this knowledge in real-world projects, where I leveraged React.js to build interactive and user-friendly interfaces.</span>
+                <section class="additional-info">
                     <section data-testid="test-user-hobbies">
-                    <h3>Hobbies</h3>
-                    <ul>
-                        <li>Reading</li>
-                        <li>Singing</li>
-                    </ul>
+                        <h3>Hobbies</h3>
+                        <ul>
+                            <li>Reading</li>
+                            <li>Singing</li>
+                        </ul>
+                    </section>
+                    <section data-testid="test-user-dislikes">
+                        <h3>Dislikes</h3>
+                        <ul>
+                            <li>Swimming</li>
+                            <li>Dishonesty</li>
+                        </ul>
+                    </section>
                 </section>
-                <section data-testid="test-user-dislikes">
-                    <h3>Dislikes</h3>
-                    <ul>
-                        <li>Swimming</li>
-                        <li>Dishonesty</li>
-                    </ul>
-                </section>
-                
-                </div>
                 <p data-testid="currentLocation">Ibadan, Nigeria.</p>
                 <p data-testid="emailAddress"><i>ogboyeeunice@gmail.com</i></p>
-                <p id="UTC" data-testid="currentDate"></p>
+                <p id="UTC" data-testid="test-user-time"></p>
                 <button class="btn" id="showLessBtn">Show Less</button> 
             </div>
         </div>
-    </div>
+    </main>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
