@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+}
+
+body {
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  background: #2b2b2b;
+  padding: 30px;
+  border-radius: 10px;
+  border: 2px solid #4de883;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #4de883;
+  font-size: 28px;
+}
+
+header p {
+  color: #ccc;
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #4de883;
+  border-radius: 5px;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #e84d9d;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 4px;
+  min-height: 16px;
+}
+
+.success-message {
+  color: #4de883;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.btn {
+  background: #222;
+  border: 2px solid #4de883;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #4de883;
+  color: #021a2f;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #4de883;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: #e84d9d;
+}
+
+@media (max-width: 500px) {
+  .contact-container {
+    padding: 20px;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+}

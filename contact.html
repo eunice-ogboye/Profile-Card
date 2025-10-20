@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Eunice Ogboye</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <main class="contact-container">
+    <header>
+      <h1>Contact Me</h1>
+      <p>Have a question or collaboration idea? Feel free to reach out!</p>
+    </header>
+
+    <form id="contactForm" novalidate>
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input 
+          type="text" 
+          id="fullName" 
+          name="fullName" 
+          data-testid="test-contact-name" 
+          aria-describedby="error-name"
+          required
+        >
+        <span class="error" id="error-name" data-testid="test-contact-error-name"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email" 
+          data-testid="test-contact-email" 
+          aria-describedby="error-email"
+          required
+        >
+        <span class="error" id="error-email" data-testid="test-contact-error-email"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject</label>
+        <input 
+          type="text" 
+          id="subject" 
+          name="subject" 
+          data-testid="test-contact-subject" 
+          aria-describedby="error-subject"
+          required
+        >
+        <span class="error" id="error-subject" data-testid="test-contact-error-subject"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea 
+          id="message" 
+          name="message" 
+          rows="5" 
+          data-testid="test-contact-message" 
+          aria-describedby="error-message"
+          required
+        ></textarea>
+        <span class="error" id="error-message" data-testid="test-contact-error-message"></span>
+      </div>
+
+      <button type="submit" class="btn" data-testid="test-contact-submit">Send Message</button>
+
+      <p class="success-message" id="successMessage" data-testid="test-contact-success" role="alert" aria-live="polite"></p>
+    </form>
+
+    <footer>
+      <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Home</a>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Get form fields
+      const fullName = document.getElementById("fullName");
+      const email = document.getElementById("email");
+      const subject = document.getElementById("subject");
+      const message = document.getElementById("message");
+      const successMessage = document.getElementById("successMessage");
+
+      // Error spans
+      const errors = {
+        name: document.getElementById("error-name"),
+        email: document.getElementById("error-email"),
+        subject: document.getElementById("error-subject"),
+        message: document.getElementById("error-message")
+      };
+
+      // Reset errors
+      Object.values(errors).forEach(el => el.textContent = "");
+      successMessage.textContent = "";
+
+      let isValid = true;
+
+      // Validation rules
+      if (!fullName.value.trim()) {
+        errors.name.textContent = "Full name is required.";
+        isValid = false;
+      }
+
+      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      if (!email.value.trim()) {
+        errors.email.textContent = "Email is required.";
+        isValid = false;
+      } else if (!emailPattern.test(email.value)) {
+        errors.email.textContent = "Please enter a valid email address.";
+        isValid = false;
+      }
+
+      if (!subject.value.trim()) {
+        errors.subject.textContent = "Subject is required.";
+        isValid = false;
+      }
+
+      if (!message.value.trim()) {
+        errors.message.textContent = "Message is required.";
+        isValid = false;
+      } else if (message.value.trim().length < 10) {
+        errors.message.textContent = "Message must be at least 10 characters long.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        successMessage.textContent = "✅ Your message has been sent successfully!";
+        document.getElementById("contactForm").reset();
+      }
+    });
+  </script>
+</body>
+</html>
