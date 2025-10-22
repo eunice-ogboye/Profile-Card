@@ -109,7 +109,7 @@
         isValid = false;
       }
 
-      const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!email.value.trim()) {
         errors.email.textContent = "Email is required.";
         isValid = false;
